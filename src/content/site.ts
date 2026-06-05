@@ -40,6 +40,16 @@ export type Experience = {
   logo?: string;
   /** Optional tech chips — handy for project entries. */
   tags?: string[];
+  /**
+   * Long-form detail paragraphs. When present, the entry becomes expandable
+   * on the full /experience page (the home page keeps the default look).
+   */
+  details?: string[];
+  /**
+   * Proof photos shown in the expanded view. Put files in /public
+   * (e.g. "/experience/ptpn/1.jpg") and list the paths here.
+   */
+  gallery?: string[];
 };
 
 export type Social = {
@@ -186,8 +196,16 @@ export const site = {
       org: "PTPN IV Regional III",
       period: "July 2025 - August 2025",
       description:
-        "Led the product backlog, QA, and full development cycle of a Next.js platform from concept to launch.",
+        "Led the product backlog, QA, and full development cycle of a Laravel platform from concept to launch.",
       logo: "/experience/reg3.png",
+      details: [
+        "Joined the regional IT team to build an internal Laravel web platform end to end — from gathering requirements with stakeholders through to deployment.",
+        "Owned the product backlog and ran QA across the development cycle, coordinating features, bug fixes, and releases with the team.",
+      ],
+      // Add proof photos to /public (e.g. /public/experience/ptpn/) and list
+      // the paths here to show them in the expanded view. Example:
+      // gallery: ["/experience/ptpn/1.jpg", "/experience/ptpn/2.jpg"],
+      gallery: ["/experience/activity/reg3/certificate.png", "/experience/activity/reg3/photo.jpeg"],
     },
     {
       kind: "education",
@@ -197,6 +215,11 @@ export const site = {
       description:
         "Focusing on full-stack development, machine learning, and software engineering.",
       logo: "/experience/unpad.png",
+      details: [
+        "Pursuing a Computer Science degree with a focus on full-stack web development, machine learning, and software engineering.",
+        "Engaged in coursework and projects spanning data structures, databases, AI, and collaborative software development.",
+      ],
+      gallery: [],
     },
     {
       kind: "education",
@@ -204,8 +227,13 @@ export const site = {
       org: "MAN 2 Kota Pekanbaru",
       period: "2020 — 2023",
       description:
-        "Focusing on full-stack development, machine learning, and software engineering.",
+        "Graduated from the Natural Science (MIPA) program with a foundation in math and science.",
       logo: "/experience/man2.png",
+      details: [
+        "Completed senior high school in the Natural Science (MIPA) track, building a strong base in mathematics and the sciences.",
+        "Began exploring programming and web development independently outside the classroom.",
+      ],
+      gallery: [],
     },
     /* Projects — standalone project experience, separate from the Projects
        cards section above. The home page shows the first couple; the full
@@ -216,8 +244,13 @@ export const site = {
       org: "WastraNusa",
       period: "2026",
       description:
-        "Built LSTM & XGBoost models to forecast inventory needs n-days ahead, cutting overstock and shortages.",
+        "Led a team building WastraNusa, a Next.js & Prisma web platform, as project manager and lead developer.",
       logo: "/experience/wastranusa.png",
+      details: [
+        "Led the team as project manager and lead developer, owning planning, the product backlog, and delivery from concept to launch.",
+        "Coordinated development and QA across the project lifecycle, keeping features and releases on track.",
+      ],
+      gallery: [],
     },
     {
       kind: "project",
@@ -227,6 +260,11 @@ export const site = {
       description:
         "Interactive VR chemistry lab in Unity for safe, visual molecular experiments.",
       logo: "/experience/chemlab-logo.png",
+      details: [
+        "Developed an interactive VR chemistry lab in Unity, letting students run experiments safely and visualize molecular interactions.",
+        "Implemented interaction systems and 3D scenes to deliver an immersive, hands-on learning experience.",
+      ],
+      gallery: [],
     },
     /* Other — activities, programs and involvements outside work/study. */
     {
@@ -237,6 +275,11 @@ export const site = {
       description:
         "Selected as a delegate exploring regional collaboration, leadership, and youth development across ASEAN.",
       logo: "/experience/leadersid.png",
+      details: [
+        "Selected as a delegate for a program focused on regional collaboration, leadership, and youth development across ASEAN.",
+        "Took part in sessions, discussions, and networking with delegates from across the region.",
+      ],
+      gallery: ["/experience/activity/ays/photo1.jpeg", "/experience/activity/ays/photo3.jpeg"],
     },
   ] satisfies Experience[],
 
