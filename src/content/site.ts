@@ -68,9 +68,9 @@ export const site = {
   role: "Informatics Student & Software Engineer",
   /** Browser tab title + SEO. */
   meta: {
-    title: "Farhan Zia Rizky | Portfolio",
+    title: "Fzzrr | Portfolio",
     description:
-      "Informatics student and software engineer building full-stack web apps, ML models, and VR experiences.",
+      "Informatics student and software engineer building full-stack web apps, ML models, etc.",
   },
 
   /* ---- Navigation ------------------------------------------------------- */
@@ -90,7 +90,7 @@ export const site = {
     /** Big headline — usually your name. */
     headline: "Farhan Zia Rizky",
     tagline:
-      "I'm an Informatics student and software engineer. I build full-stack web applications, explore machine learning architectures, and create immersive VR experiences.",
+      "I am an Computer Science student. I build full-stack web applications, exploring Artificial Intelligence, machine learning, Data Science, and Deep Learning.",
     /** Your LinkedIn profile URL (link coming soon — leave "" for a placeholder). */
     linkedinUrl: "https://www.linkedin.com/in/farhanziarizky/",
     /** Your CV: a /public path (e.g. /cv.pdf) or external link. "" = placeholder. */
@@ -108,7 +108,7 @@ export const site = {
     heading: "About me",
     /** One paragraph per array item. */
     paragraphs: [
-      "I'm a passionate developer who enjoys turning ideas into polished, usable products. My main focus is full-stack web development, but I love experimenting with machine learning and game development too.",
+      "I'm a passionate developer who enjoys turning ideas into polished, usable products. My main focus is full-stack web development, but I love experimenting with machine learning and deep learning in artificial intelligence too.",
       "When I'm not coding, you'll find me exploring new tools, contributing to projects, and learning whatever's next.",
     ],
     /** Quick facts shown as a small grid. Add or remove freely. */
@@ -124,8 +124,8 @@ export const site = {
   /** The animated icon row is configured in src/components/Skills.tsx
    *  (icons need imports, so they live there). This heading is editable. */
   skills: {
-    heading: "Technical arsenal",
-    subheading: "Tools and technologies I work with day to day.",
+    heading: "Tech Stack",
+    subheading: "Tools and technologies I use and learn on my journey.",
   },
 
   /* ---- Projects --------------------------------------------------------- */
@@ -322,7 +322,7 @@ export const site = {
   },
 
   /** Shown in the footer. {year} is replaced automatically. */
-  footer: "© {year} Farhan Zia Rizky.",
+  footer: "© {year} Fzzrr.",
 };
 
 export type Site = typeof site;
