@@ -9,7 +9,10 @@ import Footer from "@/components/Footer";
 
 export default function Portfolio() {
   return (
-    <main className="relative min-h-screen text-neutral-50 selection:bg-neutral-500/30">
+    <main
+      id="top"
+      className="relative min-h-screen scroll-mt-24 text-neutral-50 selection:bg-neutral-500/30"
+    >
       <div className="mx-auto max-w-5xl px-6">
         <Hero />
         <About />

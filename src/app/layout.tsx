@@ -1,6 +1,8 @@
 import "./globals.css";
+import "lenis/dist/lenis.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import LoadingScreen from "@/components/LoadingScreen";
 import InteractiveBackground from "@/components/InteractiveBackground";
@@ -26,12 +28,14 @@ export default function RootLayout({
         className="bg-neutral-950 text-neutral-50 antialiased selection:bg-neutral-500/30"
         suppressHydrationWarning
       >
-        <LoadingScreen />
-        <ScrollProgress />
-        <InteractiveBackground />
-        <Navbar />
-        {children}
-        <BackToTop />
+        <SmoothScroll>
+          <LoadingScreen />
+          <ScrollProgress />
+          <InteractiveBackground />
+          <Navbar />
+          {children}
+          <BackToTop />
+        </SmoothScroll>
       </body>
     </html>
   );
