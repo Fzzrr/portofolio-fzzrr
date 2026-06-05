@@ -30,7 +30,7 @@ export type Project = {
 
 export type Experience = {
   /** Which timeline column this belongs to. */
-  kind: "work" | "education" | "project";
+  kind: "work" | "education" | "project" | "other";
   role: string;
   org: string;
   /** e.g. "2024 — Present" */
@@ -82,9 +82,9 @@ export const site = {
     tagline:
       "I'm an Informatics student and software engineer. I build full-stack web applications, explore machine learning architectures, and create immersive VR experiences.",
     /** Your LinkedIn profile URL (link coming soon — leave "" for a placeholder). */
-    linkedinUrl: "",
+    linkedinUrl: "https://www.linkedin.com/in/farhanziarizky/",
     /** Your CV: a /public path (e.g. /cv.pdf) or external link. "" = placeholder. */
-    resumeUrl: "",
+    resumeUrl: "https://drive.google.com/file/d/1qzlPbPbSpsO4-Nw8NECjuJ_PzqM770eu/view?usp=sharing",
     /**
      * Profile image shown on the right of the hero.
      * Put your file in /public (e.g. /public/avatar.png) and reference it here.
@@ -183,7 +183,7 @@ export const site = {
     {
       kind: "work",
       role: "Software Developer Intern",
-      org: "PTPN VI Regional III",
+      org: "PTPN IV Regional III",
       period: "July 2025 - August 2025",
       description:
         "Led the product backlog, QA, and full development cycle of a Next.js platform from concept to launch.",
@@ -191,12 +191,21 @@ export const site = {
     },
     {
       kind: "education",
-      role: "Computer Science Bachelor's Student",
+      role: "Computer Science",
       org: "Universitas Padjadjaran",
       period: "2023 — Present",
       description:
         "Focusing on full-stack development, machine learning, and software engineering.",
       logo: "/experience/unpad.png",
+    },
+    {
+      kind: "education",
+      role: "Natural Science",
+      org: "MAN 2 Kota Pekanbaru",
+      period: "2020 — 2023",
+      description:
+        "Focusing on full-stack development, machine learning, and software engineering.",
+      logo: "/experience/man2.png",
     },
     /* Projects — standalone project experience, separate from the Projects
        cards section above. The home page shows the first couple; the full
@@ -219,24 +228,47 @@ export const site = {
         "Interactive VR chemistry lab in Unity for safe, visual molecular experiments.",
       logo: "/experience/chemlab-logo.png",
     },
+    /* Other — activities, programs and involvements outside work/study. */
+    {
+      kind: "other",
+      role: "Delegate",
+      org: "Leaders.Id",
+      period: "2025",
+      description:
+        "Selected as a delegate exploring regional collaboration, leadership, and youth development across ASEAN.",
+      logo: "/experience/leadersid.png",
+    },
   ] satisfies Experience[],
 
   /* ---- Socials & contact ------------------------------------------------ */
   socials: [
     { type: "github", label: "GitHub", href: "https://github.com/Fzzrr" },
-    { type: "linkedin", label: "LinkedIn", href: "" },
-    { type: "email", label: "Email", href: "mailto:your.email@example.com" },
+    {
+      type: "linkedin",
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/farhanziarizky/",
+    },
+    {
+      type: "email",
+      label: "Email",
+      href: "mailto:farhanziarizky@gmail.com",
+    },
+    {
+      type: "instagram",
+      label: "Instagram",
+      href: "https://www.instagram.com/farhanziaarizky/",
+    },
   ] satisfies Social[],
 
   contact: {
     heading: "Let's build something",
     text: "Currently open for new opportunities and collaborations. Feel free to reach out — I usually reply within a day.",
     /** Used by the big email button. */
-    email: "your.email@example.com",
+    email: "farhanziarizky@gmail.com",
   },
 
   /** Shown in the footer. {year} is replaced automatically. */
-  footer: "© {year} Farhan Zia Rizky. Built with Next.js & Tailwind CSS.",
+  footer: "© {year} Farhan Zia Rizky.",
 };
 
 export type Site = typeof site;
