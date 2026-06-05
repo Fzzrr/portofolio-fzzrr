@@ -5,12 +5,15 @@ export default function SectionHeading({
   title,
   subtitle,
   action,
+  titleClassName = "text-3xl font-bold tracking-tight md:text-4xl",
 }: {
   eyebrow?: string;
   title: string;
   subtitle?: string;
   /** Optional element (e.g. a "view all" link) aligned to the right of the heading. */
   action?: ReactNode;
+  /** Override the title typography (e.g. for a more compact section header). */
+  titleClassName?: string;
 }) {
   return (
     <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -20,7 +23,7 @@ export default function SectionHeading({
             {eyebrow}
           </span>
         )}
-        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">{title}</h2>
+        <h2 className={titleClassName}>{title}</h2>
         {subtitle && (
           <p className="mt-3 text-base leading-relaxed text-neutral-400">{subtitle}</p>
         )}
