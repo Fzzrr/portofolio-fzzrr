@@ -205,7 +205,7 @@ export const site = {
       kind: "work",
       role: "Software Developer Intern",
       org: "PTPN IV Regional III",
-      period: "July 2025 - August 2025",
+      period: "July 2025 — August 2025",
       description:
         "Led the product backlog, QA, and full development cycle of a Laravel platform from concept to launch.",
       logo: "/experience/reg3.png",
@@ -291,6 +291,20 @@ export const site = {
         "Took part in sessions, discussions, and networking with delegates from across the region.",
       ],
       gallery: ["/experience/activity/ays/photo1.jpeg", "/experience/activity/ays/photo3.jpeg"],
+    },
+    {
+      kind: "other",
+      role: "Head of the Entrepreneurship Department",
+      org: "Himatif Unpad",
+      period: "January 2025 — December 2025",
+      description:
+        "Led the Entrepreneurship Department at Himatif Unpad, focusing on fostering entrepreneurial skills and initiatives among students.",
+      logo: "/experience/himatif.png",
+      details: [
+        "Leading the Entrepreneurship Department at Himatif Unpad, with a focus on raising funds for the organization.",
+        "Organizing entrepreneurship workshops to support the soft skills of entrepreneurial staff."
+      ],
+      gallery: ["/experience/activity/himatif/photo1.jpeg", "/experience/activity/himatif/photo2.jpeg"],
     },
   ] satisfies Experience[],
 
