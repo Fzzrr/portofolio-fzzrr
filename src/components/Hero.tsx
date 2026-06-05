@@ -65,12 +65,12 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-full border border-neutral-700 px-6 py-3 font-medium text-neutral-200 transition-colors hover:border-neutral-500 hover:bg-neutral-800"
             >
-              <FileDown size={18} /> Download CV
+              <FileDown size={18} /> Curriculum Vitae (CV)
             </a>
 
             <div className="flex items-center gap-1 pl-2">
               {socials
-                .filter((s) => s.href)
+                .filter((s) => s.href && s.type !== "email")
                 .map((s) => (
                   <a
                     key={s.type}
