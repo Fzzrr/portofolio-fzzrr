@@ -135,7 +135,7 @@ export const site = {
       category: "Full-stack",
       description:
         "A comprehensive web platform built with Next.js and Prisma. Managed complete product backlog, QA, and development cycles.",
-      tags: ["Next.js", "Prisma", "PostgreSQL"],
+      tags: ["Next.js", "Prisma", "PostgreSQL", "Tailwind CSS", "Vercel"],
       image: "/project/WastraNusa.png",
       liveUrl: "https://wastranusa.vercel.app/",
       repoUrl: "https://github.com/Fzzrr/retail-forecast",
@@ -146,7 +146,7 @@ export const site = {
       category: "Machine Learning",
       description:
         "Predictive models using LSTM and XGBoost to forecast inventory needs n-days ahead, reducing overstock and shortages.",
-      tags: ["Python", "LSTM", "XGBoost"],
+      tags: ["Python", "LSTM", "XGBoost", "Pandas", "Matplotlib", "TensorFlow"],
       image: "/project/RetailForecast.png",
       liveUrl: "https://retail-forcasting.streamlit.app/",
       repoUrl: "https://github.com/Fzzrr/retail-forecast",
@@ -169,7 +169,18 @@ export const site = {
       description:
         "A smart sleep monitoring system using IoT sensors and machine learning algorithms to detect and prevent sleep disorders.",
       tags: ["Python", "TensorFlow", "IoT"],
-      image: "",
+      image: "/project/SleepGuard.png",
+      liveUrl: "",
+      repoUrl: "https://github.com/Fzzrr/SleepGuard",
+      featured: false,
+    },
+    {
+      title: "Retail Decision Support System",
+      category: "AI / Machine Learning",
+      description:
+        "A smart system for providing data-driven insights to support retail decision-making.",
+      tags: ["Python", "Pandas", "Streamlit", "Scikit-learn"],
+      image: "/project/RetailDSS.png",
       liveUrl: "",
       repoUrl: "https://github.com/Fzzrr/SleepGuard",
       featured: false,
@@ -180,7 +191,7 @@ export const site = {
       description:
         "A data warehouse for analyzing and visualizing BandCamp sales data.",
       tags: ["Python", "SQLite", "Streamlit"],
-      image: "",
+      image: "/project/BandCamp.png",
       liveUrl: "",
       repoUrl: "https://github.com/Fzzrr/bandcamp-data-warehouse",
       featured: false,

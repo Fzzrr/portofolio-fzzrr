@@ -126,7 +126,7 @@ export default function Projects({ showMore = true }: { showMore?: boolean }) {
         <SectionHeading
           eyebrow="Selected work"
           title="Featured projects"
-          subtitle="A few things I've built. More on my GitHub."
+          subtitle="A few things I've built, See more on my GitHub."
           action={
             showMore && site.projects.length > 3 ? (
               <MoreLink href="/projects" />
