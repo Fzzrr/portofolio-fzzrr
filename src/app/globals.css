@@ -2,6 +2,8 @@
 
 html {
   scroll-behavior: smooth;
+  cursor: default;
+  user-select: none
 }
 
 /* ── Cursor-following glow (whole page) ─────────────────────────────── */
