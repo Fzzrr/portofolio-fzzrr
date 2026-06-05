@@ -27,11 +27,39 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close the mobile menu on Escape or once the viewport grows to desktop.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    const onResize = () => {
+      if (window.innerWidth >= 768) setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [open]);
+
   // Sections shown in the sidebar (everything except the contact CTA).
   const sidebarItems = site.nav.filter((item) => item.href !== "/contact");
 
   return (
     <>
+      {/* Backdrop behind the open mobile menu — tap to close */}
+      <button
+        type="button"
+        aria-hidden
+        tabIndex={-1}
+        onClick={() => setOpen(false)}
+        className={`fixed inset-0 z-40 bg-neutral-950/50 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+          open ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      />
+
       {/* â”€â”€ Top bar (hidden on desktop once scrolled) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div
         className={`fixed top-4 z-50 flex w-full justify-center px-4 transition-all duration-300 ${
@@ -41,8 +69,8 @@ export default function Navbar() {
         }`}
       >
         <nav
-          className={`relative flex w-full max-w-5xl items-center justify-between rounded-full px-6 py-3 text-sm text-white transition-all duration-300 ${
-            scrolled
+          className={`relative flex w-full max-w-5xl items-center justify-between rounded-full px-4 py-3 text-sm text-white transition-all duration-300 sm:px-6 ${
+            scrolled || open
               ? "border border-neutral-800 bg-neutral-950/80 backdrop-blur-md"
               : "border border-transparent bg-transparent"
           }`}
@@ -86,7 +114,7 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <Link
-            href="/contact"
+            href="/#contact"
             className="group hidden items-center gap-1.5 rounded-full bg-white px-4 py-2 font-medium text-black shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-10px_rgba(255,255,255,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 md:inline-flex"
           >
             Get in touch
@@ -108,31 +136,36 @@ export default function Navbar() {
           </button>
 
           {/* Mobile dropdown */}
-          {open && (
-            <div className="absolute left-0 top-16 flex w-full flex-col gap-2 rounded-3xl border border-neutral-800 bg-neutral-900 p-4 shadow-xl md:hidden">
-              {site.nav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className={`rounded-xl px-4 py-2 transition-colors hover:bg-neutral-800 hover:text-white ${
-                    pathname === item.href
-                      ? "bg-neutral-800 text-white"
-                      : "text-neutral-300"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+          <div
+            inert={!open}
+            className={`absolute inset-x-0 top-[calc(100%+0.5rem)] flex max-h-[calc(100vh-6rem)] origin-top flex-col gap-1 overflow-y-auto overscroll-contain rounded-3xl border border-neutral-800 bg-neutral-950/95 p-3 shadow-xl backdrop-blur-md transition-all duration-300 ease-out md:hidden ${
+              open
+                ? "translate-y-0 scale-100 opacity-100"
+                : "pointer-events-none -translate-y-2 scale-95 opacity-0"
+            }`}
+          >
+            {site.nav.map((item) => (
               <Link
-                href="/contact"
+                key={item.href}
+                href={item.href}
                 onClick={() => setOpen(false)}
-                className="mt-1 rounded-full bg-white px-4 py-2 text-center font-medium text-black"
+                className={`rounded-xl px-4 py-2.5 transition-colors hover:bg-neutral-800 hover:text-white ${
+                  pathname === item.href
+                    ? "bg-neutral-800 text-white"
+                    : "text-neutral-300"
+                }`}
               >
-                Get in touch
+                {item.label}
               </Link>
-            </div>
-          )}
+            ))}
+            <Link
+              href="/#contact"
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded-full bg-white px-4 py-2.5 text-center font-medium text-black transition-colors hover:bg-neutral-200"
+            >
+              Get in touch
+            </Link>
+          </div>
         </nav>
       </div>
 
@@ -162,10 +195,10 @@ export default function Navbar() {
           {/* Separated contact CTA */}
           <div className="rounded-2xl border border-neutral-800 bg-neutral-950/80 p-1.5 shadow-xl backdrop-blur-md">
             <SidebarIcon
-              href="/contact"
+              href="/#contact"
               label="Get in touch"
               Icon={Mail}
-              active={pathname === "/contact"}
+              active={false}
               accent
             />
           </div>
