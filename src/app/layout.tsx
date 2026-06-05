@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body
-        className="bg-neutral-950 text-neutral-50 antialiased selection:bg-neutral-500/30"
+        className="is-loading bg-neutral-950 text-neutral-50 antialiased selection:bg-neutral-500/30"
         suppressHydrationWarning
       >
         <SmoothScroll>

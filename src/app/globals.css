@@ -105,6 +105,12 @@ html {
   animation: fade-up 0.7s ease-out forwards;
 }
 
+/* Hold the hero entrance frozen at frame 0 while the intro panel is up, so the
+   content rises into view in sync with the panel lifting — not before. */
+.is-loading .fade-up {
+  animation-play-state: paused;
+}
+
 .fade-up-2 {
   animation-delay: 0.1s;
 }
